@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+mkdir binutils-build
+mkdir binutils-install
+cd binutils-build
+../binutils-${V_BINUTILS}/configure \
+    --host=i686-w64-mingw32 \
+    --prefix=/c/Users/Public/tinkerboard \
+    --target=arm-tinkerboard-linux-gnueabihf \
+    "--with-pkgversion=GNU Binutils for the Asus Tinkerboard" \
+    --enable-poison-system-directories \
+    --with-sysroot=/c/Users/Public/tinkerboard/arm-tinkerboard-linux-gnueabihf \
+    --enable-plugins \
+    --disable-nls \
+    --enable-lto \
+    --with-build-sysroot=/usr/local/arm-tinkerboard-linux-gnueabihf
+make -j10
+DESTDIR=$PWD/../binutils-install make install
+cd ../binutils-install

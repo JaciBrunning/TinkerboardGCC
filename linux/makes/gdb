@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+mkdir gdb-build
+mkdir gdb-install
+cd gdb-build
+../gdb-${V_GDB}/configure \
+    --target=arm-tinkerboard-linux-gnueabihf \
+    --prefix=/usr/local \
+    --with-pkgversion='GDB for the Asus Tinkerboard' \
+    --disable-nls \
+    --with-libexpat \
+    --datadir=/usr/local/share/tinkerboard \
+    --with-system-gdbinit=/usr/local/share/tinkerboard/gdb/gdbinit \
+    --with-sysroot=/usr/local/arm-tinkerboard-linux-gnueabihf/ \
+    --enable-lto \
+    || exit $?
+make || exit $?
+DESTDIR=$PWD/../gdb-install make install|| exit $?
+cd ../gdb-install
+cp ../../patches/gdb/gdbinit usr/local/share/tinkerboard/gdb/gdbinit
+

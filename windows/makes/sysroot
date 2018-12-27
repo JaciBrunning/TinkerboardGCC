@@ -1,0 +1,7 @@
+#!/bin/zsh
+source ../versions.sh
+
+
+mkdir -p sysroot-install/c/Users/Public/tinkerboard/arm-tinkerboard-linux-gnueabihf
+mv sysroot-libc-linux/{usr,lib} sysroot-install/c/Users/Public/tinkerboard/arm-tinkerboard-linux-gnueabihf/
+
