@@ -122,10 +122,13 @@ ln -s ../../../libubsan.so.0 libubsan.so
 popd
 
 pushd repack/out/usr/lib
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
-sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
-sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
+sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
+sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
+sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
+sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
+
+cat libc.so
+cat libpthread.so
 popd
 
 pushd repack
