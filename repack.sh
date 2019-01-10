@@ -87,6 +87,7 @@ rm libresolv.so
 rm librt.so
 rm libthread_db.so
 rm libutil.so
+rm libusb-1.0.so
 ln -s ../../lib/libanl.so.1 libanl.so
 ln -s ../../lib/libBrokenLocale.so.1 libBrokenLocale.so
 ln -s ../../lib/libcidn.so.1 libcidn.so
@@ -104,6 +105,7 @@ ln -s ../../lib/libresolv.so.2 libresolv.so
 ln -s ../../lib/librt.so.1 librt.so
 ln -s ../../lib/libthread_db.so.1 libthread_db.so
 ln -s ../../lib/libutil.so.1 libutil.so
+ln -s ../../lib/libusb-1.0.so.0 libusb-1.0.so
 popd
 
 pushd repack/out/usr/lib/gcc/arm-tinkerboard-linux-gnueabihf/6.3.0
@@ -128,15 +130,11 @@ sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
 sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
 sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
 sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
-sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libusb-1.0.so
-sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libusb-1.0.so
 else
 sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
 sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
 sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
 sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
-sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libusb-1.0.so
-sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libusb-1.0.so
 fi
 
 cat libc.so
