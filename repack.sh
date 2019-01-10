@@ -128,11 +128,15 @@ sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
 sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
 sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
 sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
+sed -i '' -e 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libusb-1.0.so
+sed -i '' -e 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libusb-1.0.so
 else
 sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libc.so
 sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libc.so
 sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libpthread.so
 sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libpthread.so
+sed -i 's/\/usr\/lib\/arm-linux-gnueabihf\///g' libusb-1.0.so
+sed -i 's/\/lib\/arm-linux-gnueabihf\//..\/..\/lib\//g' libusb-1.0.so
 fi
 
 cat libc.so
