@@ -28,4 +28,5 @@ wget -nc -nv \
     http://ftp.debian.org/debian/pool/main/g/glibc/libc6_${Va_LIBC}_armhf.deb \
     http://ftp.debian.org/debian/pool/main/g/glibc/libc6-dbg_${Va_LIBC}_armhf.deb \
     http://ftp.debian.org/debian/pool/main/g/glibc/libc6-dev_${Va_LIBC}_armhf.deb \
-    http://ftp.debian.org/debian/pool/main/l/linux/linux-libc-dev_${Va_LINUX}_armhf.deb
+    http://ftp.debian.org/debian/pool/main/l/linux/linux-libc-dev_${Va_LINUX}_armhf.deb \
+    http://ftp.debian.org/debian/pool/main/libu/libusb-1.0/libusb-1.0-0-dev_${Va_LIBUSB}_armhf.deb
